@@ -14,8 +14,8 @@ Assumes you have:
 * Lookup your Azure subscription ID
 * Lookup your Dyantrace tenantId and token for the One Agent setup.
 * clone this repo
-* Make a copy of ```variables_template.csv``` to ```variables.csv` and update with your desired values
-* Make a copy of ```parameters_template.json``` to ```parameters.json` and update with YOUR_DT_VALUES
+* Make a copy of ```variables_template.csv``` to ```variables.csv``` and update with your desired values
+* Make a copy of ```parameters_template.json``` to ```parameters.json``` and update with YOUR_DT_VALUES
 
 # Run
 
