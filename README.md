@@ -9,16 +9,30 @@ Assumes you have:
 * Azure CLI tools installed
 * Run scripts from unix terminal
 
+## dtcli-webproxy-container
+
+Makes a VM with with the Dynatrace One Agent Extention.
+
+## vm-oneagent
+
+Makes a container instance running a docker image
+
 # Setup
 
 * Lookup your Azure subscription ID
-* Lookup your Dyantrace tenantId and token for the One Agent setup.
+* Lookup your Dyantrace tenantId and token for the One Agent setup
 * clone this repo
-* Make a copy of ```variables_template.csv``` to ```variables.csv``` and update with your desired values
+* within the each subfolder, make a a file called ```subscription.txt``` with the value of you Azure subscription id. The ```.gitignore``` will prevent this from being checked in
+* within the Makefile you can optionally adjust region in the variables section
 * Make a copy of ```parameters_template.json``` to ```parameters.json``` and update with YOUR_DT_VALUES
 
 # Run
 
-Within a subfolder, run the ```./xxx_deploy.sh``` or ```./xxx_remove.sh``` scripts as required.
+Within a subfolder, run ```make``` to see help for the make command options
 
-Do not run the ```deploy.sh``` script directly. It is a generic script provided by Microsoft the web UI.
+Scripts that require Dynatrace account information, will prompt for this. For example
+```
+Please provide string value for 'tenantId' (? for help): 
+Please provide string value for 'token' (? for help): 
+```
+NOTE: you can run it directly, but the Makefile will run the ```deploy.sh``` script. This script provided within Microsoft the web UI.
