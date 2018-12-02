@@ -9,8 +9,7 @@ pool:
 steps:
 - task: CopyFiles@2
   inputs:
-    sourceFolder:$(Build.SourcesDirectory)/arm/dtcli-webproxy-container
-    contents: *.json
+    contents: arm\dtcli-webproxy-container\*.json
     targetFolder: $(Build.ArtifactStagingDirectory)
 - task: PublishBuildArtifacts@1
   inputs:
