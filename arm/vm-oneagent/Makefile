@@ -5,8 +5,8 @@ resourceGroupLocation = eastus
 # edit subscription.txt file with your value
 $(eval subscriptionId=`cat subscription.txt`)
 # dont edit these unless you adjust the ARM templates too
-resourceGroupName = dtcliProxy
-deploymentName = ContainerDeploy
+resourceGroupName = DemoVM
+deploymentName = DemoVMDeploy
 vmName = DemoVM
 
 help:
