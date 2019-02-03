@@ -1,0 +1,42 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "servicePrincipalClientId": {
+            "value": "395d5526-f869-4f57-960d-fb0a3eb2cbe1"
+        },
+        "servicePrincipalClientSecret": {
+          "value": "password1"
+        },
+        "resourceName": {
+            "value": "rjahn-demo-acm-cluster"
+        },
+        "location": {
+            "value": "eastus"
+        },
+        "dnsPrefix": {
+            "value": "rjahn-demo-acm-cluster"
+        },
+        "kubernetesVersion": {
+            "value": "1.11.5"
+        },
+        "workspaceName": {
+            "value": "DefaultWorkspace-rjahn-demo-group"
+        },
+        "omsWorkspaceId": {
+            "value": "/subscriptions/2673104e-2246-4e67-a844-b3255a665ebb/resourceGroups/rjahn-demo-group-aks/providers/Microsoft.OperationalInsights/workspaces/DefaultWorkspace-rjahn-demo-group"
+        },
+        "workspaceRegion": {
+            "value": "eastus"
+        },
+        "enableHttpApplicationRouting": {
+            "value": false
+        },
+        "networkPlugin": {
+            "value": "kubenet"
+        },
+        "enableRBAC": {
+            "value": false
+        }
+    }
+}

@@ -1,13 +1,12 @@
 default: help
 
-# Adjust to your needs
-resourceGroupLocation = eastus
 # edit subscription.txt file with your value
 $(eval subscriptionId=`cat subscription.txt`)
 # dont edit these unless you adjust the ARM templates too
-resourceGroupName = rjahn-dtcli-proxy
-deploymentName = ContainerDeploy
-containerName = dtcli-webproxy
+resourceGroupName = rjahn-demo-group-aks
+deploymentName = demo-aks-deployment
+resourceGroupLocation = eastus
+aksName = rjahn-demo-acm-cluster
 
 help:
 	@echo Current values to be used in scripts.  Fix if not correct
@@ -15,22 +14,22 @@ help:
 	@echo " resourceGroupLocation"=$(resourceGroupLocation)
 	@echo " resourceGroupName"=$(resourceGroupName)
 	@echo " deploymentName"=$(deploymentName)
-	@echo " containerName"=$(containerName)
+	@echo " aksName"=$(aksName)
 
-container_deploy:
-	@echo Deploying....
+aks_deploy:
+	@echo Deploying ...
 	./deploy.sh -i $(subscriptionId) -g $(resourceGroupName) -n $(deploymentName) -l $(resourceGroupLocation)
-	@echo Getting current Containers...
-	az container list -o table
+	@echo Getting current Kubernetes Clusters...
+	az aks list -o table
 	@echo Done
 
-container_remove:
-	@echo Getting current Containers...
-	az container list -o table
-	@echo About to remove $(containerName)
-	az container delete -n $(containerName) -g $(resourceGroupName)
-	@echo Getting current Containers...
-	az container list -o table
+aks_remove:
+	@echo Getting current Kubernetes Clusters...
+	az aks list -o table
+	@echo About to remove $aksName
+	az aks delete -n $(aksName) -g $(resourceGroupName)
+	@echo Getting current Kubernetes Clusters...
+	az aks list -o table
 	@echo Done
 
 group_deploy:

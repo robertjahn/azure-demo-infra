@@ -30,7 +30,7 @@ vm_remove:
 	@echo About to remove $vmName
 	az vm delete -n $(vmName) -g $(resourceGroupName)
 	@echo Getting current VMs...
-	az container list -o table
+	az vm list -o table
 	@echo Done
 
 group_deploy:
